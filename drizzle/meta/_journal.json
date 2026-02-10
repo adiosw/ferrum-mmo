@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1770511859351,
+      "tag": "0000_lethal_supreme_intelligence",
+      "breakpoints": true
+    }
+  ]
+}

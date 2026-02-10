@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "spearman",
+      "name": "Pikinier",
+      "type": "infantry",
+      "cost": {"wood": 50, "grain": 20},
+      "recruitment_time_seconds": 180, "recruitment_time_multiplier": 0.95,
+      "attack": 10,
+      "defense": 15,
+      "morale": 10,
+      "speed": 10, "speed_type": "foot",
+      "counters": ["cavalry"],
+      "description": "Podstawowa jednostka piechoty, skuteczna przeciwko kawalerii."
+    },
+    {
+      "id": "swordsman",
+      "name": "Miecznik",
+      "type": "infantry",
+      "cost": {"iron": 40, "grain": 30},
+      "recruitment_time_seconds": 240, "recruitment_time_multiplier": 0.95,
+      "attack": 20,
+      "defense": 10,
+      "morale": 12,
+      "speed": 10, "speed_type": "foot",
+      "counters": ["infantry"],
+      "description": "Dobrze opancerzony piechur, silny w bezpośrednim starciu."
+    },
+    {
+      "id": "archer",
+      "name": "Łucznik",
+      "type": "infantry",
+      "cost": {"wood": 60, "grain": 20},
+      "recruitment_time_seconds": 200, "recruitment_time_multiplier": 0.95,
+      "attack": 15,
+      "defense": 5,
+      "morale": 8,
+      "speed": 10, "speed_type": "foot",
+      "counters": ["walls"],
+      "description": "Jednostka dystansowa, zadaje obrażenia z bezpiecznej odległości, przydatna w oblężeniach."
+    },
+    {
+      "id": "light_cav",
+      "name": "Lekka Kawaleria",
+      "type": "cavalry",
+      "cost": {"iron": 80, "grain": 50},
+      "recruitment_time_seconds": 480, "recruitment_time_multiplier": 0.95,
+      "attack": 30,
+      "defense": 20,
+      "morale": 15,
+      "speed": 25, "speed_type": "mounted",
+      "counters": ["archer"],
+      "description": "Szybka jednostka do rajdów i flankowania, wrażliwa na pikinierów."
+    },
+    {
+      "id": "heavy_cav",
+      "name": "Ciężka Kawaleria",
+      "type": "cavalry",
+      "cost": {"iron": 150, "grain": 80},
+      "recruitment_time_seconds": 720, "recruitment_time_multiplier": 0.95,
+      "attack": 50,
+      "defense": 40,
+      "morale": 20,
+      "speed": 20, "speed_type": "mounted",
+      "counters": ["infantry"],
+      "description": "Elitarna jednostka kawalerii, potężna w ataku, ale droga."
+    },
+    {
+      "id": "ram",
+      "name": "Taran",
+      "type": "machine",
+      "cost": {"wood": 300, "stone": 100},
+      "recruitment_time_seconds": 1800, "recruitment_time_multiplier": 0.95,
+      "attack": 5,
+      "defense": 50,
+      "morale": 0,
+      "speed": 5, "speed_type": "siege",
+      "special": "wall_dmg",
+      "description": "Maszyna oblężnicza, niszczy mury obronne."
+    },
+    {
+      "id": "catapult",
+      "name": "Katapulta",
+      "type": "machine",
+      "cost": {"wood": 500, "stone": 250},
+      "recruitment_time_seconds": 2400, "recruitment_time_multiplier": 0.95,
+      "attack": 60,
+      "defense": 10,
+      "morale": 0,
+      "speed": 5, "speed_type": "siege",
+      "special": "building_dmg",
+      "description": "Maszyna oblężnicza, zadaje obrażenia budynkom i jednostkom."
+    },
+    {
+      "id": "herald",
+      "name": "Herold",
+      "type": "special",
+      "cost": {"grain": 1000, "iron": 500},
+      "recruitment_time_seconds": 3600, "recruitment_time_multiplier": 0.95,
+      "attack": 1,
+      "defense": 1,
+      "morale": 100,
+      "speed": 30, "speed_type": "mounted",
+      "special": "vassalization",
+      "description": "Jednostka do wasalizacji i dyplomacji."
+    },
+    {
+      "id": "scout",
+      "name": "Zwiadowca",
+      "type": "cavalry",
+      "cost": {"wood": 20, "grain": 20},
+      "recruitment_time_seconds": 120, "recruitment_time_multiplier": 0.95,
+      "attack": 0,
+      "defense": 2,
+      "morale": 5,
+      "speed": 40, "speed_type": "mounted",
+      "special": "spy",
+      "description": "Szybka jednostka do zwiadu i unikania walki."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "Users": {
+    "id": "string",
+    "username": "string",
+    "email": "string",
+    "dynasty_id": "string",
+    "created_at": "timestamp"
+  },
+  "Villages": {
+    "id": "string",
+    "owner_id": "string",
+    "name": "string",
+    "resources": {
+      "wood": "number",
+      "stone": "number",
+      "iron": "number",
+      "grain": "number",
+      "last_update": "timestamp"
+    },
+    "production": {
+      "wood": "number",
+      "stone": "number",
+      "iron": "number",
+      "grain": "number"
+    },
+    "buildings": {
+      "town_hall": "number",
+      "woodcutter": "number",
+      "quarry": "number",
+      "iron_mine": "number",
+      "farm": "number",
+      "warehouse": "number",
+      "barracks": "number",
+      "walls": "number"
+    },
+    "build_queue": [
+      {
+        "building_type": "string",
+        "level": "number",
+        "start_time": "timestamp",
+        "end_time": "timestamp"
+      }
+    ]
+  },
+  "Dynasty": {
+    "id": "string",
+    "owner_id": "string",
+    "current_lord": {
+      "name": "string",
+      "dna_id": "string",
+      "traits": ["string"],
+      "birth_date": "timestamp",
+      "death_date": "timestamp"
+    },
+    "history": []
+  },
+  "Armies": {
+    "village_id": "string",
+    "units": {
+      "infantry": "number",
+      "cavalry": "number",
+      "rams": "number",
+      "catapults": "number",
+      "heralds": "number"
+    }
+  }
+}

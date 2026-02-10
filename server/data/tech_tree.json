@@ -1,0 +1,27 @@
+{
+  "buildings": [
+    { "id": "town_hall", "name": "Ratusz", "max_level": 20, "description": "Główny budynek, przyspiesza budowę." },
+    { "id": "woodcutter", "name": "Chata Drwala", "max_level": 30, "description": "Produkcja drewna." },
+    { "id": "quarry", "name": "Kamieniołom", "max_level": 30, "description": "Produkcja kamienia." },
+    { "id": "iron_mine", "name": "Kopalnia Żelaza", "max_level": 30, "description": "Produkcja żelaza." },
+    { "id": "farm", "name": "Gospodarstwo", "max_level": 30, "description": "Produkcja zboża i populacja." },
+    { "id": "warehouse", "name": "Spichlerz", "max_level": 20, "description": "Pojemność surowców." },
+    { "id": "barracks", "name": "Koszary", "max_level": 20, "description": "Rekrutacja piechoty." },
+    { "id": "stable", "name": "Stajnia", "max_level": 15, "description": "Rekrutacja kawalerii." },
+    { "id": "workshop", "name": "Warsztat", "max_level": 10, "description": "Produkcja maszyn oblężniczych." },
+    { "id": "walls", "name": "Mury Obronne", "max_level": 20, "description": "Bonus do obrony." },
+    { "id": "market", "name": "Rynek", "max_level": 10, "description": "Handel surowcami." },
+    { "id": "academy", "name": "Akademia", "max_level": 5, "description": "Badania i Heroldowie." }
+  ],
+  "units": [
+    { "id": "spearman", "name": "Pikinier", "type": "infantry", "cost": { "wood": 50, "grain": 20 }, "attack": 10, "defense": 15 },
+    { "id": "swordsman", "name": "Miecznik", "type": "infantry", "cost": { "iron": 40, "grain": 30 }, "attack": 20, "defense": 10 },
+    { "id": "archer", "name": "Łucznik", "type": "infantry", "cost": { "wood": 60, "grain": 20 }, "attack": 15, "defense": 5 },
+    { "id": "light_cav", "name": "Lekka Kawaleria", "type": "cavalry", "cost": { "iron": 80, "grain": 50 }, "attack": 30, "defense": 20 },
+    { "id": "heavy_cav", "name": "Ciężka Kawaleria", "type": "cavalry", "cost": { "iron": 150, "grain": 80 }, "attack": 50, "defense": 40 },
+    { "id": "ram", "name": "Taran", "type": "machine", "cost": { "wood": 300, "stone": 100 }, "attack": 5, "defense": 50, "special": "wall_dmg" },
+    { "id": "catapult", "name": "Katapulta", "type": "machine", "cost": { "wood": 500, "stone": 250 }, "attack": 60, "defense": 10, "special": "building_dmg" },
+    { "id": "herald", "name": "Herold", "type": "special", "cost": { "grain": 1000, "iron": 500 }, "attack": 1, "defense": 1, "special": "vassalization" },
+    { "id": "scout", "name": "Zwiadowca", "type": "cavalry", "cost": { "wood": 20, "grain": 20 }, "attack": 0, "defense": 2, "special": "spy" }
+  ]
+}
