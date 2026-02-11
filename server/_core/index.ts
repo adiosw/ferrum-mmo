@@ -1,24 +1,27 @@
 import "dotenv/config";
 import express from "express";
-import { createServer } from "http";
-import { createExpressMiddleware } from "@trpc/server/adapters/express";
+import http from "http";
+import path from "path";
+import { fileURLToPath } from "url";
 
+import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import registerOAuthRoutes from "./oauth";
 import appRouter from "./routers";
 import { createContext } from "./context";
 import serveStatic, { setupVite } from "./vite";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 async function startServer() {
   const app = express();
-  const server = createServer(app);
+  const server = http.createServer(app);
 
   app.use(express.json({ limit: "50mb" }));
-  app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-  // OAuth
   registerOAuthRoutes(app);
 
-  // tRPC
   app.use(
     "/api/trpc",
     createExpressMiddleware({
@@ -27,14 +30,12 @@ async function startServer() {
     })
   );
 
-  // Vite dev / static prod
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  // IMPORTANT: Koyeb port
   const port = Number(process.env.PORT || 8000);
 
   server.listen(port, "0.0.0.0", () => {
