@@ -5,10 +5,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import registerOAuthRoutes from "./oauth";
-import appRouter from "../routers";
+
+// POPRAWIONE IMPORTY
+import { registerOAuthRoutes } from "./oauth";
+import { appRouter } from "../routers";
 import { createContext } from "./context";
-import serveStatic, { setupVite } from "./vite";
+import { serveStatic, setupVite } from "./vite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
