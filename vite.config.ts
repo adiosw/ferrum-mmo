@@ -91,18 +91,40 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  // KLUCZOWA POPRAWKA: Przekazujemy zmienne z Koyeb do frontendu
+  // POPRAWIONY BLOK DEFINE DLA PRZEGLĄDARKI:
   define: {
-    'process.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL),
-    'process.env.VITE_SOCKET_URL': JSON.stringify(process.env.VITE_SOCKET_URL),
-    'process.env.VITE_WS_URL': JSON.stringify(process.env.VITE_SOCKET_URL),
-    'process.env.OAUTH_SERVER_URL': JSON.stringify(process.env.OAUTH_SERVER_URL),
+    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL),
+    'import.meta.env.VITE_SOCKET_URL': JSON.stringify(process.env.VITE_SOCKET_URL),
+    'import.meta.env.VITE_WS_URL': JSON.stringify(process.env.VITE_SOCKET_URL),
+    'import.meta.env.OAUTH_SERVER_URL': JSON.stringify(process.env.OAUTH_SERVER_URL),
   },
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+    },
+  },
+  envDir: path.resolve(import.meta.dirname),
+  root: path.resolve(import.meta.dirname, "client"),
+  publicDir: path.resolve(import.meta.dirname, "client", "public"),
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    emptyOutDir: true,
+  },
+  server: {
+    host: true,
+    allowedHosts: [
+      ".koyeb.app",
+      "localhost",
+      "127.0.0.1",
+    ],
+    fs: {
+      strict: true,
+      deny: ["**/.*"],
+    },
+  },
+});
     },
   },
   envDir: path.resolve(import.meta.dirname),
